@@ -33,7 +33,7 @@ module Plotlyjs
       html = <<~HTML
         <div id="#{element_id}"></div>
         <script>
-          if ("Plotlt" in window) {
+          if ("Plotly" in window) {
             #{createjs}
           }
         </script>
