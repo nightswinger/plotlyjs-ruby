@@ -33,9 +33,13 @@ module Plotlyjs
       html = <<~HTML
         <div id="#{element_id}"></div>
         <script>
+          var createChart = function() { #{createjs} };
+
           if ("Plotly" in window) {
-            #{createjs}
-          }
+            createChart();
+          } else {
+            window.addEventListener('load', createChart);
+          };
         </script>
       HTML
 
