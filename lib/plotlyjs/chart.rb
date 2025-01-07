@@ -9,7 +9,7 @@ module Plotlyjs
     end
 
     def to_html
-      element_id = "plotly-chart-#{self.object_id}"
+      element_id = config.delete(:id) ||"plotly-chart-#{self.object_id}"
 
       js_vars = {
         data: data.to_json,
